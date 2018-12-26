@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>สั่งซื้อสินค้า</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <h5 color="red">Wellcome to my Shop iPhone</h5>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-label>จำนวนสินค้า</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="กรุณาระบุจำนวนสินค้า" [(ngModel)]="ProductOrderAmount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ราคาสินค้า</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input type="name" placeholder="กรุณาระบุราคาสินค้า" [(ngModel)]="ProductOrderPrice"></ion-input>
+    </ion-item>
+
+    <ion-col text-center>
+      <button ion-button full color="secondary" (click)="OrderProduct()">สั่งซื้อ</button>
+    </ion-col>
+  </ion-card>
+
+</ion-content>

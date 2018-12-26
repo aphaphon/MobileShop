@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ข้อมูลสินค้า</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-item col-2 text-center>รหัสการสั่งซื้อ</ion-item>
+    <ion-item col-2 text-center>ชื่อสินค้า</ion-item>
+    <ion-item col-2 text-center>ราคา</ion-item>
+    <ion-item col-2 text-center>จำนวน</ion-item>
+    <ion-item col-2 text-center>ราคารวม</ion-item>
+    <ion-item col-2 text-center>กลุ่ม</ion-item>
+  </ion-row>
+
+   <ion-row *ngFor="let item of products">
+    <ion-item col-2 text-center>{{item.orderId}}</ion-item>
+    <ion-item col-2 text-center>{{item.name}}</ion-item>
+    <ion-item col-2 text-center>{{item.price}}</ion-item>
+    <ion-item col-2 text-center>{{item.amount}}</ion-item>
+    <ion-item col-2 text-center>{{item.totalAmount}}</ion-item>
+    <ion-item col-2 text-center>{{item.group}}</ion-item>
+   </ion-row> 
+
+    <ion-item>ราคาเฉลี่ยต่อชิ้น : {{ average }}</ion-item>
+
+</ion-content>
