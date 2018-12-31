@@ -25,9 +25,23 @@ namespace shopapi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Order> Get()
+        public ActionResult<AllProduct> Get()
         {
-            return orders;
+            double sumP = 0;
+            double sumA = 0;
+            for (int i = 0; i < orders.Count; i++)
+            {
+                sumP += orders[i].Amount;
+                sumA += orders[i].TotalAmount;
+            }
+            var avgs = sumA / sumP;
+
+            var avg = new AllProduct
+            {
+                AllProducts = orders,
+                Average = Math.Round(avgs, 2)
+            };
+            return avg;
         }
 
         private string CalculateGroup(int score)

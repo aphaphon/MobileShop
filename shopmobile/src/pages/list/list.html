@@ -17,15 +17,15 @@
     <ion-item col-2 text-center>กลุ่ม</ion-item>
   </ion-row>
 
-   <ion-row *ngFor="let item of products">
-    <ion-item col-2 text-center>{{item.orderId}}</ion-item>
-    <ion-item col-2 text-center>{{item.name}}</ion-item>
-    <ion-item col-2 text-center>{{item.price}}</ion-item>
-    <ion-item col-2 text-center>{{item.amount}}</ion-item>
-    <ion-item col-2 text-center>{{item.totalAmount}}</ion-item>
-    <ion-item col-2 text-center>{{item.group}}</ion-item>
+   <ion-row *ngFor="let it of allProducts.allProducts">
+    <ion-item col-2 text-center>{{it.orderId}}</ion-item>
+    <ion-item col-2 text-center>{{it.name}}</ion-item>
+    <ion-item col-2 text-center>{{it.price}}</ion-item>
+    <ion-item col-2 text-center>{{it.amount}}</ion-item>
+    <ion-item col-2 text-center>{{it.totalAmount}}</ion-item>
+    <ion-item col-2 text-center>{{it.group}}</ion-item>
    </ion-row> 
 
-    <ion-item>ราคาเฉลี่ยต่อชิ้น : {{ average }}</ion-item>
+    <ion-item>ราคาเฉลี่ยต่อชิ้น : {{ allProducts.average }}</ion-item>
 
 </ion-content>

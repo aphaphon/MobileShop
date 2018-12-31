@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,} from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../../models/product';
+import { AllProduct } from '../../models/allproduct';
 
 @Component({
   selector: 'page-list',
@@ -9,13 +9,13 @@ import { Product } from '../../models/product';
 })
 export class ListPage {
 
-  private products: Product;
+  public allProducts: AllProduct = new AllProduct();
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
-    this.http.get<Product>("https://localhost:5001/api/Order").subscribe(
+    this.http.get<AllProduct>("https://localhost:5001/api/Order").subscribe(
       it => {
-        console.log(it);
-        this.products = it;
+        console.log(it.allProducts);
+        this.allProducts = it;
       });
   }
 }

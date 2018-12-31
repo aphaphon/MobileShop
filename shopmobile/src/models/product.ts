@@ -5,4 +5,5 @@ export class Product {
     public amount: number;
     public totalAmount: number;
     public group: string;
+    public average: number;
 }
